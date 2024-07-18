@@ -1,1 +1,2 @@
-# amd-ai-pc-wavenet
+# AMD AI PC WaveNet
+
