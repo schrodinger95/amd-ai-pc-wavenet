@@ -152,8 +152,8 @@ class WaveNetModel(nn.Module):
 
             # parametrized skip connection
             s = x
-            # if x.size(2) != 1:
-            #     s = dilate(x, 1, init_dilation=dilation)
+            if x.size(2) != 1:
+                s = dilate(x, 1, init_dilation=dilation)
             s = self.skip_convs[i](s)
             try:
                 skip = skip[:, :, -s.size(2):]
@@ -184,6 +184,7 @@ class WaveNetModel(nn.Module):
 
         return x
 
+    ## Forward training
     # def forward(self, input):
     #     x = self.wavenet(input,
     #                      dilation_func=self.wavenet_dilate)
@@ -196,10 +197,17 @@ class WaveNetModel(nn.Module):
     #     x = x.view(n * l, c)
     #     return x
     
+    ## Forward for generation
     def forward(self, x):
         x = self.wavenet(x,
-                         dilation_func=self.queue_dilate)
+                         dilation_func=self.wavenet_dilate)
         return x
+    
+    ## Forward for fast generation
+    # def forward(self, x):
+    #     x = self.wavenet(x,
+    #                      dilation_func=self.queue_dilate)
+    #     return x
 
     def generate(self,
                  num_samples,

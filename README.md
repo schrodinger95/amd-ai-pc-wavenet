@@ -10,6 +10,7 @@ This is an implementation of the WaveNet architecture on [AMD Ryzen™ AI powere
 - snapshots: Trained PyTorch models.
 - models: ONNX models.
 - train_samples: Training data.
+- wav: Generated audios.
 
 ## Demo
 - [train_demo.ipynb](./train_demo.ipynb): Demo for model training. Recommended to run on machines with GPU. Modified from repository [pytorch-wavenet](https://github.com/vincentherrmann/pytorch-wavenet).
@@ -20,8 +21,8 @@ This is an implementation of the WaveNet architecture on [AMD Ryzen™ AI powere
 
 The following runtime has been tested on **AMD Radeon 780M**.
 
-|     **Session**    | **Inference (s)** | **Generation (s)** |
-|:------------------:|:-----------------:|:------------------:|
-| PyTorch (CPU)      | 4.60e-03          | 829.6              |
-| ONNX Runtime (CPU) | 4.80e-06          | 24.9               |
-| ONNX Runtime (NPU) | 6.37e-06          | 25.8               |
+|     **Session**    | **Inference (s)** | **Generation (sample/s)** |
+|:------------------:|:-----------------:|:-------------------------:|
+| PyTorch (CPU)      | 0.0954            | 0.0857                    |
+| ONNX Runtime (CPU) | 0.0634            | 0.0649                    |
+| ONNX Runtime (NPU) | 0.0601            | 0.0646                    |
