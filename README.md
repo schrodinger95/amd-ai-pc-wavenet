@@ -16,6 +16,7 @@ This is an implementation of the WaveNet architecture on [AMD Ryzen™ AI powere
 - [train_demo.ipynb](./train_demo.ipynb): Demo for model training. Recommended to run on machines with GPU. Modified from repository [pytorch-wavenet](https://github.com/vincentherrmann/pytorch-wavenet).
 - [deployment_demo.ipynb](./deployment_demo.ipynb): Demo for running the model on an AI PC.
 - [generation_demo.ipynb](./generation_demo.ipynb): Demo for generation of audio on an AI PC.
+- [WhisperWave.py](./WhisperWave.py): Run WhisperWave for testing.
 
 ## Runtime
 
